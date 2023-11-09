@@ -7,16 +7,12 @@
 #include <stdio.h>
 #include <stdio.h> 
 
-
 #define SCREEN_WIDTH  400
 #define SCREEN_HEIGHT 240
 
 
 int main(int argc, char **argv)
 {
-	/* Enable N3DS 804MHz operation, where available */
-	osSetSpeedupEnable(true);
-	
 	// Init libs
 	romfsInit();
 	gfxInitDefault();
@@ -41,9 +37,9 @@ int main(int argc, char **argv)
 	fseek(file,0,SEEK_SET);
 	
 	//Load file into heap memory
-	u8* frame = new u8[size];
-    memset(frame, 0, size);
-    size_t bytesread = fread(frame, sizeof(u8), size, file);
+	u8* video = new u8[size];
+    memset(video, 0, size);
+    size_t bytesread = fread(video, sizeof(u8), size, file);
     fclose(file);
 
 	
@@ -104,14 +100,14 @@ int main(int argc, char **argv)
 			int adjusted_i = i + bytes_read_so_far;
 			if (y == 0){
 				//Get starting color for col
-				u8 color_byte = frame[bytes_read_so_far + (x / 8)];
+				u8 color_byte = video[bytes_read_so_far + (x / 8)];
 				int offset = 7 - x % 8;
-				color = (color_byte >> offset) & 0x1; //Something funky is going on here
+				color = (color_byte >> offset) & 0x1;
 			}
 			
 			if (color)
-				C2D_DrawRectSolid(x, y, 0, 1, frame[adjusted_i], clrWhite);
-			y += frame[adjusted_i];
+				C2D_DrawRectSolid(x, y, 0, 1, video[adjusted_i], clrWhite);
+			y += video[adjusted_i];
 			color = !color;
 			
 			
@@ -127,7 +123,7 @@ int main(int argc, char **argv)
 		C3D_FrameEnd(0);
 	}
 	
-	delete[] frame;
+	delete[] video;
 
 	// Deinit libs
 	C2D_Fini();
