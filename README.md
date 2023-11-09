@@ -14,3 +14,7 @@ After completing the installation, turn on your 3DS and navigate to the homebrew
 #Running on Citra
 =================
 First start by downloading the __`BadApple3ds.3dsx`__ from the latest release. From there all you have to do is add that file to your roms directory or drag the file into Citra from file explorer.
+
+#Pull Request
+=============
+I intend on adding audio and a few other things to this sometime in December, but if someone else wants to take a crack at it I will gladly review any pull request that are recieved. Full credit will be given for the contribution(s).
