@@ -4,7 +4,8 @@ Play Bad Apple on any modded Nintendo 3DS or with the Citra Emulator. The curren
 #Instalation on 3DS
 ===================
 A modded 3ds console is needed to run this program. If you 3ds is not already modded please follow the guide at https://3ds.hacks.guide/. Please do not follow video tutorials as many of them are outdated.
-Locate the __`3ds`__ folder on the root of your SD card and drag and drop the __`BadApple3ds.3dsx`__ file into it.
+
+Remove the SD card from your 3DS while it is powered off and connect it to your computer. Locate the __`3ds`__ folder on the root of your SD card and drag and drop the __`BadApple3ds.3dsx`__ file into it. This file can be retrieved from the latest release section.
 
 #Running on 3DS
 ===============
