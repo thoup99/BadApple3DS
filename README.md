@@ -1,7 +1,7 @@
 # BadApple3DS
 Play Bad Apple on any modded Nintendo 3DS or with the Citra Emulator. The current version does not have audio, but it will be added at a later time.
 
-Instalation on 3DS
+Installation on 3DS
 ===================
 A modded 3ds console is needed to run this program. If you 3ds is not already modded please follow the guide at https://3ds.hacks.guide/. Please do not follow video tutorials as many of them are outdated.
 
